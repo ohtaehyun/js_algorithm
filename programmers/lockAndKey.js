@@ -1,3 +1,4 @@
+//https://programmers.co.kr/learn/courses/30/lessons/60059
 function solution(key, lock) {
     const extendedKey = [];
     for(let i = 1; i < lock.length; i++){
