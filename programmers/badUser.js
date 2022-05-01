@@ -26,7 +26,8 @@ function solution(user_id, banned_id) {
     banMap.forEach(ban=>{
         banList.push(getCombi(ban.idList,0,ban.banCnt));
     });
-    const answer = getCount(banList,0);
+    
+    const answer = getAnswer(banList,0);
     let totalSet = new Set();
     for(const a of answer){
         const s = new Set(a);
@@ -37,13 +38,13 @@ function solution(user_id, banned_id) {
     
 }
 
-function getCount(list,idx){
+function getAnswer(list,idx){
     if(list.length === idx){
         return [[]];
     }
     
     const result = [];
-    const next = getCount(list,idx+1);
+    const next = getAnswer(list,idx+1);
     for(const li of list[idx]){
         for(const ne of next){
             result.push([...li,...ne]);
