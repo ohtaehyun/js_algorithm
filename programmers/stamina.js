@@ -1,7 +1,7 @@
 // https://programmers.co.kr/learn/courses/30/lessons/87946
 function solution(k, dungeons) {
     dungeons = dungeons.map(([min,used],idx) => [min,used,idx]);
-    var answer = -1;
+    let answer = 0;
     const queue = [[k,[]]];
     while(queue.length>0){
         const [stamina,visited] = queue.shift();
